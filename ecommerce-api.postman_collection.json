@@ -1,0 +1,2258 @@
+{
+  "info": {
+    "_postman_id": "6602d7f9-0794-4d64-b7be-5433c796b843",
+    "name": "ecommerce-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56717972",
+    "_collection_link": "https://go.postman.co/collection/56717972-6602d7f9-0794-4d64-b7be-5433c796b843?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Create Category",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const response = pm.response.json();\r",
+                  "pm.environment.set(\"categoryId\", response.data._id);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Books\",\r\n    \"description\": \"Books and magazines\",\r\n    \"slug\": \"books\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/categories",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Category",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Books\",\r\n    \"description\": \"Books and magazines\",\r\n    \"slug\": \"books\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/categories",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "256"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"100-s45zMnodK0bLS5eK8+tNg+JsrcM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:25:20 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Category created successfully\",\n    \"data\": {\n        \"name\": \"Books\",\n        \"description\": \"Books and magazines\",\n        \"slug\": \"books\",\n        \"_id\": \"6a60eef012b4ef217b444967\",\n        \"createdAt\": \"2026-07-22T16:25:20.894Z\",\n        \"updatedAt\": \"2026-07-22T16:25:20.894Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Category by Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"slug\": \"books_newww\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/categories/:id",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{categoryId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Category by Id",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"slug\": \"books_newww\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/categories/:id",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "categories",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{categoryId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "262"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"106-Rwy+RaYRgeCpmY03gvuYpQPq92Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:33:26 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Category updated successfully\",\n    \"data\": {\n        \"_id\": \"6a60eef012b4ef217b444967\",\n        \"name\": \"Books\",\n        \"description\": \"Books and magazines\",\n        \"slug\": \"books_newww\",\n        \"createdAt\": \"2026-07-22T16:25:20.894Z\",\n        \"updatedAt\": \"2026-07-22T16:33:26.481Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/categories",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Categories",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/categories",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "categories"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "476"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1dc-8h393WLKcpkVQditU1jJGGXp0BQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:26:27 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Categories retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6a5b823a24a1b8966ff7f156\",\n            \"name\": \"Electronics\",\n            \"description\": \"Electronic devices and accessories\",\n            \"slug\": \"electronics\",\n            \"createdAt\": \"2026-07-18T13:40:10.701Z\",\n            \"updatedAt\": \"2026-07-18T13:40:10.701Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6a60eef012b4ef217b444967\",\n            \"name\": \"Books\",\n            \"description\": \"Books and magazines\",\n            \"slug\": \"books\",\n            \"createdAt\": \"2026-07-22T16:25:20.894Z\",\n            \"updatedAt\": \"2026-07-22T16:25:20.894Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Category by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/categories/:id",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{categoryId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Category by Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/categories/:id",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "categories",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{categoryId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "285"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"11d-io2/3VvxfiOIjCo2lJrCqFBSXBA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:28:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Category retrieved successfully\",\n    \"data\": {\n        \"_id\": \"6a5b823a24a1b8966ff7f156\",\n        \"name\": \"Electronics\",\n        \"description\": \"Electronic devices and accessories\",\n        \"slug\": \"electronics\",\n        \"createdAt\": \"2026-07-18T13:40:10.701Z\",\n        \"updatedAt\": \"2026-07-18T13:40:10.701Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Category by Id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/categories/:id",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "categories",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{categoryId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Category by Id",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/categories/:id",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "categories",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{categoryId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "74"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4a-wS9TI/X7mH/B3kxERE8AiBHL4Cs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:34:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Category deleted successfully\",\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Create Product",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const response = pm.response.json();\r",
+                  "pm.environment.set(\"productId\", response.data._id);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Portable Bluetooth Speaker\",\r\n    \"description\": \"Compact waterproof Bluetooth speaker with 12-hour battery life.\",\r\n    \"price\": 79.99,\r\n    \"stock\": 30,\r\n    \"category\": \"{{categoryId}}\",\r\n    \"images\": [\r\n        \"https://example.com/images/bluetooth-speaker.jpg\"\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/products",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Product",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Portable Bluetooth Speaker\",\r\n    \"description\": \"Compact waterproof Bluetooth speaker with 12-hour battery life.\",\r\n    \"price\": 79.99,\r\n    \"stock\": 30,\r\n    \"category\": \"{{categoryId}}\",\r\n    \"images\": [\r\n        \"https://example.com/images/bluetooth-speaker.jpg\"\r\n    ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/products",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "445"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1bd-ljts3Y0u/d93NPQQWZqhowA3kMo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:44:50 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"name\": \"Portable Bluetooth Speaker\",\n        \"description\": \"Compact waterproof Bluetooth speaker with 12-hour battery life.\",\n        \"price\": 79.99,\n        \"stock\": 30,\n        \"category\": \"6a5b823a24a1b8966ff7f156\",\n        \"images\": [\n            \"https://example.com/images/bluetooth-speaker.jpg\"\n        ],\n        \"_id\": \"6a60f38212b4ef217b444968\",\n        \"inStock\": true,\n        \"createdAt\": \"2026-07-22T16:44:50.233Z\",\n        \"updatedAt\": \"2026-07-22T16:44:50.233Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product by Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"price\": 100.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/products/:id",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{productId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Product by Id",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"price\": 100.00\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/products/:id",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{productId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "443"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1bb-ojytsCDpeI8SP2kF3lN5QOA2HzE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:48:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"_id\": \"6a60f38212b4ef217b444968\",\n        \"name\": \"Portable Bluetooth Speaker\",\n        \"description\": \"Compact waterproof Bluetooth speaker with 12-hour battery life.\",\n        \"price\": 100,\n        \"stock\": 30,\n        \"category\": \"6a5b823a24a1b8966ff7f156\",\n        \"images\": [\n            \"https://example.com/images/bluetooth-speaker.jpg\"\n        ],\n        \"inStock\": true,\n        \"createdAt\": \"2026-07-22T16:44:50.233Z\",\n        \"updatedAt\": \"2026-07-22T16:48:09.003Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/products?category=6a5b823a24a1b8966ff7f156&minPrice=100&maxPrice=500&inStock=true&search=mouse",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "6a5b823a24a1b8966ff7f156",
+                  "type": "text"
+                },
+                {
+                  "key": "minPrice",
+                  "value": "100",
+                  "type": "text"
+                },
+                {
+                  "key": "maxPrice",
+                  "value": "500",
+                  "type": "text"
+                },
+                {
+                  "key": "inStock",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "search",
+                  "value": "mouse",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Products",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/products",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1476"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"5c4-VrAb72K22CDuAzgVAr3rB2sDaek\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:38:42 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Products retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6a5b82bb24a1b8966ff7f157\",\n            \"name\": \"Gaming Mouse\",\n            \"description\": \"RGB Gaming Mouse\",\n            \"price\": 1200,\n            \"stock\": 15,\n            \"category\": {\n                \"_id\": \"6a5b823a24a1b8966ff7f156\",\n                \"name\": \"Electronics\",\n                \"description\": \"Electronic devices and accessories\"\n            },\n            \"images\": [],\n            \"inStock\": true,\n            \"createdAt\": \"2026-07-18T13:42:19.094Z\",\n            \"updatedAt\": \"2026-07-18T13:42:19.094Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6a5b833b24a1b8966ff7f158\",\n            \"name\": \"Gaming Keyboard\",\n            \"description\": \"Mechanical RGB Keyboard\",\n            \"price\": 2500,\n            \"stock\": 8,\n            \"category\": {\n                \"_id\": \"6a5b823a24a1b8966ff7f156\",\n                \"name\": \"Electronics\",\n                \"description\": \"Electronic devices and accessories\"\n            },\n            \"images\": [],\n            \"inStock\": true,\n            \"createdAt\": \"2026-07-18T13:44:27.708Z\",\n            \"updatedAt\": \"2026-07-18T13:44:27.708Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6a5b835b24a1b8966ff7f159\",\n            \"name\": \"Office Chair\",\n            \"description\": \"Comfortable office chair\",\n            \"price\": 900,\n            \"stock\": 0,\n            \"category\": {\n                \"_id\": \"6a5b823a24a1b8966ff7f156\",\n                \"name\": \"Electronics\",\n                \"description\": \"Electronic devices and accessories\"\n            },\n            \"images\": [],\n            \"inStock\": false,\n            \"createdAt\": \"2026-07-18T13:44:59.685Z\",\n            \"updatedAt\": \"2026-07-18T13:44:59.685Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6a5b838524a1b8966ff7f15a\",\n            \"name\": \"Office Chair\",\n            \"description\": \"Comfortable office chair\",\n            \"price\": 900,\n            \"stock\": 0,\n            \"category\": {\n                \"_id\": \"6a5b823a24a1b8966ff7f156\",\n                \"name\": \"Electronics\",\n                \"description\": \"Electronic devices and accessories\"\n            },\n            \"images\": [],\n            \"inStock\": false,\n            \"createdAt\": \"2026-07-18T13:45:41.721Z\",\n            \"updatedAt\": \"2026-07-18T13:45:41.721Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Get Products by Category Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/products?category=6a5b823a24a1b8966ff7f156",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "6a5b823a24a1b8966ff7f156"
+                    },
+                    {
+                      "key": "minPrice",
+                      "value": "100",
+                      "disabled": true
+                    },
+                    {
+                      "key": "maxPrice",
+                      "value": "500",
+                      "disabled": true
+                    },
+                    {
+                      "key": "inStock",
+                      "value": "true",
+                      "disabled": true
+                    },
+                    {
+                      "key": "search",
+                      "value": "mouse",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "417"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1a1-+fAqHMGdZwXg84PsoVqvI7e8Gcs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 19:18:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Products retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6a5b82bb24a1b8966ff7f157\",\n            \"name\": \"Gaming Mouse\",\n            \"description\": \"RGB Gaming Mouse\",\n            \"price\": 1200,\n            \"stock\": 9,\n            \"category\": {\n                \"_id\": \"6a5b823a24a1b8966ff7f156\",\n                \"name\": \"Electronics\",\n                \"description\": \"Electronic devices and accessories\"\n            },\n            \"images\": [],\n            \"inStock\": true,\n            \"createdAt\": \"2026-07-18T13:42:19.094Z\",\n            \"updatedAt\": \"2026-07-22T17:46:58.484Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Get Products by Prices",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/products?minPrice=100&maxPrice=500",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "6a5b823a24a1b8966ff7f156",
+                      "disabled": true
+                    },
+                    {
+                      "key": "minPrice",
+                      "value": "100"
+                    },
+                    {
+                      "key": "maxPrice",
+                      "value": "500"
+                    },
+                    {
+                      "key": "inStock",
+                      "value": "true",
+                      "disabled": true
+                    },
+                    {
+                      "key": "search",
+                      "value": "mouse",
+                      "disabled": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "528"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"210-W7m35p/4E1VkS+++AQlUM4a+o5M\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 19:19:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Products retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6a60f38212b4ef217b444968\",\n            \"name\": \"Portable Bluetooth Speaker\",\n            \"description\": \"Compact waterproof Bluetooth speaker with 12-hour battery life.\",\n            \"price\": 100,\n            \"stock\": 30,\n            \"category\": {\n                \"_id\": \"6a5b823a24a1b8966ff7f156\",\n                \"name\": \"Electronics\",\n                \"description\": \"Electronic devices and accessories\"\n            },\n            \"images\": [\n                \"https://example.com/images/bluetooth-speaker.jpg\"\n            ],\n            \"inStock\": true,\n            \"createdAt\": \"2026-07-22T16:44:50.233Z\",\n            \"updatedAt\": \"2026-07-22T16:48:09.003Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            },
+            {
+              "name": "Get Products by Search Filter",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/products?search=mouse",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "6a5b823a24a1b8966ff7f156",
+                      "disabled": true
+                    },
+                    {
+                      "key": "minPrice",
+                      "value": "100",
+                      "disabled": true
+                    },
+                    {
+                      "key": "maxPrice",
+                      "value": "500",
+                      "disabled": true
+                    },
+                    {
+                      "key": "inStock",
+                      "value": "true",
+                      "disabled": true
+                    },
+                    {
+                      "key": "search",
+                      "value": "mouse"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "417"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1a1-+fAqHMGdZwXg84PsoVqvI7e8Gcs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 19:19:48 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Products retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6a5b82bb24a1b8966ff7f157\",\n            \"name\": \"Gaming Mouse\",\n            \"description\": \"RGB Gaming Mouse\",\n            \"price\": 1200,\n            \"stock\": 9,\n            \"category\": {\n                \"_id\": \"6a5b823a24a1b8966ff7f156\",\n                \"name\": \"Electronics\",\n                \"description\": \"Electronic devices and accessories\"\n            },\n            \"images\": [],\n            \"inStock\": true,\n            \"createdAt\": \"2026-07-18T13:42:19.094Z\",\n            \"updatedAt\": \"2026-07-22T17:46:58.484Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Product by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/products/:id",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{productId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Product by Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/products/:id",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{productId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "415"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"19f-3z8Pf1REopFs6IyZDOYjJYrdSBQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:39:48 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Product retrieved successfully\",\n    \"data\": {\n        \"_id\": \"6a5b82bb24a1b8966ff7f157\",\n        \"name\": \"Gaming Mouse\",\n        \"description\": \"RGB Gaming Mouse\",\n        \"price\": 1200,\n        \"stock\": 15,\n        \"category\": {\n            \"_id\": \"6a5b823a24a1b8966ff7f156\",\n            \"name\": \"Electronics\",\n            \"description\": \"Electronic devices and accessories\"\n        },\n        \"images\": [],\n        \"inStock\": true,\n        \"createdAt\": \"2026-07-18T13:42:19.094Z\",\n        \"updatedAt\": \"2026-07-18T13:42:19.094Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Product by Id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/products/:id",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "products",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{productId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Product by Id",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/products/:id",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "products",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{productId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "73"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"49-y+ePxSt0z3f3WS10Rr8CxSWe7ug\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 16:45:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Product deleted successfully\",\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Add Item to Cart",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"productId\": \"{{productId}}\", \r\n    \"quantity\":  2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/cart/items",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cart",
+                "items"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Add Item to Cart",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \r\n    \"productId\": \"{{productId}}\", \r\n    \"quantity\":  2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/cart/items",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cart",
+                    "items"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "387"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"183-CNJpwvwa+u7vSHdpM3Mnc0tyoaY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:09:59 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Product added to cart successfully\",\n    \"data\": {\n        \"_id\": \"6a60f967228af24c027e32f3\",\n        \"items\": [\n            {\n                \"product\": {\n                    \"_id\": \"6a5b82bb24a1b8966ff7f157\",\n                    \"name\": \"Gaming Mouse\",\n                    \"price\": 1200,\n                    \"stock\": 15,\n                    \"images\": []\n                },\n                \"quantity\": 2,\n                \"price\": 2400,\n                \"_id\": \"6a60f967228af24c027e32f4\"\n            }\n        ],\n        \"totalPrice\": 2400,\n        \"createdAt\": \"2026-07-22T17:09:59.226Z\",\n        \"updatedAt\": \"2026-07-22T17:09:59.343Z\",\n        \"__v\": 1\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Item Quantity",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"quantity\":  4\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/cart/items/:productId",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cart",
+                "items",
+                ":productId"
+              ],
+              "variable": [
+                {
+                  "key": "productId",
+                  "value": "{{productId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Item Quantity",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \r\n    \"quantity\":  4\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/cart/items/:productId",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cart",
+                    "items",
+                    ":productId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "productId",
+                      "value": "{{productId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "378"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"17a-YkejGa5jVREWE/JTPOr6pyhm9Ok\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:33:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Cart updated successfully\",\n    \"data\": {\n        \"_id\": \"6a60febe2f86e4d4751cdebd\",\n        \"items\": [\n            {\n                \"product\": {\n                    \"_id\": \"6a5b82bb24a1b8966ff7f157\",\n                    \"name\": \"Gaming Mouse\",\n                    \"price\": 1200,\n                    \"stock\": 15,\n                    \"images\": []\n                },\n                \"quantity\": 4,\n                \"price\": 4800,\n                \"_id\": \"6a60fefc2f86e4d4751cdec9\"\n            }\n        ],\n        \"totalPrice\": 4800,\n        \"createdAt\": \"2026-07-22T17:32:46.854Z\",\n        \"updatedAt\": \"2026-07-22T17:33:51.942Z\",\n        \"__v\": 3\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Item from Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/cart/items/:productId",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cart",
+                "items",
+                ":productId"
+              ],
+              "variable": [
+                {
+                  "key": "productId",
+                  "value": "{{productId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Item from Cart",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/cart/items/:productId",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cart",
+                    "items",
+                    ":productId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "productId",
+                      "value": "{{productId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "225"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"e1-3lXO973bfTB1NVzqW3ffybuvnJg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:35:19 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Product removed from cart successfully\",\n    \"data\": {\n        \"_id\": \"6a60febe2f86e4d4751cdebd\",\n        \"items\": [],\n        \"totalPrice\": 0,\n        \"createdAt\": \"2026-07-22T17:32:46.854Z\",\n        \"updatedAt\": \"2026-07-22T17:35:18.992Z\",\n        \"__v\": 4\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Cart",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/cart",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cart"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Cart",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/cart",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cart"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "380"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"17c-RT1R3z+n3XkP2ZLF9NbDoXO9K5I\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:17:39 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Cart retrieved successfully\",\n    \"data\": {\n        \"_id\": \"6a60f967228af24c027e32f3\",\n        \"items\": [\n            {\n                \"product\": {\n                    \"_id\": \"6a5b82bb24a1b8966ff7f157\",\n                    \"name\": \"Gaming Mouse\",\n                    \"price\": 1200,\n                    \"stock\": 15,\n                    \"images\": []\n                },\n                \"quantity\": 2,\n                \"price\": 2400,\n                \"_id\": \"6a60f967228af24c027e32f4\"\n            }\n        ],\n        \"totalPrice\": 2400,\n        \"createdAt\": \"2026-07-22T17:09:59.226Z\",\n        \"updatedAt\": \"2026-07-22T17:09:59.343Z\",\n        \"__v\": 1\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/cart",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cart"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Cart",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/cart",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "cart"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "212"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"d4-zqJ9murQ4VMxoa4AXe2ZdbxBsoc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:19:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Cart cleared successfully\",\n    \"data\": {\n        \"_id\": \"6a60f967228af24c027e32f3\",\n        \"items\": [],\n        \"totalPrice\": 0,\n        \"createdAt\": \"2026-07-22T17:09:59.226Z\",\n        \"updatedAt\": \"2026-07-22T17:19:05.378Z\",\n        \"__v\": 2\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Checkout",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "const response = pm.response.json();\r",
+                  "pm.environment.set(\"orderId\", response.data._id);\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"shippingAddress\": \"Masr Gamila\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/orders",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Checkout",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \r\n    \"shippingAddress\": \"Masr Gamila\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/orders",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "420"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1a4-JRLIeaFj8FoyYQB+/4eV1fITFzQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:46:58 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"orderNumber\": \"ORD-1784742418544\",\n        \"items\": [\n            {\n                \"product\": \"6a5b82bb24a1b8966ff7f157\",\n                \"name\": \"Gaming Mouse\",\n                \"price\": 1200,\n                \"quantity\": 2,\n                \"_id\": \"6a6102122f86e4d4751cdedb\"\n            }\n        ],\n        \"totalPrice\": 2400,\n        \"status\": \"pending\",\n        \"shippingAddress\": \"Masr Gamila\",\n        \"_id\": \"6a6102122f86e4d4751cdeda\",\n        \"createdAt\": \"2026-07-22T17:46:58.546Z\",\n        \"updatedAt\": \"2026-07-22T17:46:58.546Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Orders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/orders",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Orders",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/orders",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "480"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1e0-VgfwVAgjj3YgjTNFfuP7uY4oHNM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:48:00 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Orders retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6a6102122f86e4d4751cdeda\",\n            \"orderNumber\": \"ORD-1784742418544\",\n            \"items\": [\n                {\n                    \"product\": {\n                        \"_id\": \"6a5b82bb24a1b8966ff7f157\",\n                        \"name\": \"Gaming Mouse\",\n                        \"price\": 1200,\n                        \"images\": []\n                    },\n                    \"name\": \"Gaming Mouse\",\n                    \"price\": 1200,\n                    \"quantity\": 2,\n                    \"_id\": \"6a6102122f86e4d4751cdedb\"\n                }\n            ],\n            \"totalPrice\": 2400,\n            \"status\": \"pending\",\n            \"shippingAddress\": \"Masr Gamila\",\n            \"createdAt\": \"2026-07-22T17:46:58.546Z\",\n            \"updatedAt\": \"2026-07-22T17:46:58.546Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Order by Id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/orders/:id",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{orderId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Order by Id",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/orders/:id",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "orders",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{orderId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "477"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1dd-qRaDHyLB4irmgwYw+dg9KFjB/yA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:50:26 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Order retrieved successfully\",\n    \"data\": {\n        \"_id\": \"6a6102122f86e4d4751cdeda\",\n        \"orderNumber\": \"ORD-1784742418544\",\n        \"items\": [\n            {\n                \"product\": {\n                    \"_id\": \"6a5b82bb24a1b8966ff7f157\",\n                    \"name\": \"Gaming Mouse\",\n                    \"price\": 1200,\n                    \"images\": []\n                },\n                \"name\": \"Gaming Mouse\",\n                \"price\": 1200,\n                \"quantity\": 2,\n                \"_id\": \"6a6102122f86e4d4751cdedb\"\n            }\n        ],\n        \"totalPrice\": 2400,\n        \"status\": \"pending\",\n        \"shippingAddress\": \"Masr Gamila\",\n        \"createdAt\": \"2026-07-22T17:46:58.546Z\",\n        \"updatedAt\": \"2026-07-22T17:46:58.546Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"status\": \"confirmed\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/orders/:id/status",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                ":id",
+                "status"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "{{orderId}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Order Status",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \r\n    \"status\": \"confirmed\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/orders/:id/status",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "orders",
+                    ":id",
+                    "status"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "{{orderId}}"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "429"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1ad-A9TQyEs4xPzZ6dLe1vAnZUmC0hE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:55:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Order status updated successfully\",\n    \"data\": {\n        \"_id\": \"6a6102122f86e4d4751cdeda\",\n        \"orderNumber\": \"ORD-1784742418544\",\n        \"items\": [\n            {\n                \"product\": \"6a5b82bb24a1b8966ff7f157\",\n                \"name\": \"Gaming Mouse\",\n                \"price\": 1200,\n                \"quantity\": 2,\n                \"_id\": \"6a6102122f86e4d4751cdedb\"\n            }\n        ],\n        \"totalPrice\": 2400,\n        \"status\": \"confirmed\",\n        \"shippingAddress\": \"Masr Gamila\",\n        \"createdAt\": \"2026-07-22T17:46:58.546Z\",\n        \"updatedAt\": \"2026-07-22T17:55:05.678Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Non-Existing Order Status",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \r\n    \"status\": \"confirmed\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://{{baseUrl}}:5000/api/orders/:id/status",
+              "protocol": "http",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                ":id",
+                "status"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "6a60febe2f86e4d4751cdebd"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Non-Existing Order Status",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \r\n    \"status\": \"confirmed\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://{{baseUrl}}:5000/api/orders/:id/status",
+                  "protocol": "http",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "port": "5000",
+                  "path": [
+                    "api",
+                    "orders",
+                    ":id",
+                    "status"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "6a60febe2f86e4d4751cdebd"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "59"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3b-02qfVZWFPeiLgcPRjr03tEGL8sg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Wed, 22 Jul 2026 17:57:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"error\",\n    \"message\": \"Order not found.\",\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
