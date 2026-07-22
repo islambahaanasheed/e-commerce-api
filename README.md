@@ -61,43 +61,51 @@ npm run dev
 
 ### Products
 
-GET `/api/products`
+GET '/api/products'
 
-POST `/api/products`
+POST '/api/products'
 
-PUT `/api/products/:id`
+PUT '/api/products/:id'
 
-DELETE `/api/products/:id`
+DELETE '/api/products/:id'
 
 ---
 
 ### Categories
 
-GET `/api/categories`
+GET '/api/categories'
 
-POST `/api/categories`
+POST '/api/categories'
 
-PUT `/api/categories/:id`
+PUT '/api/categories/:id'
 
-DELETE `/api/categories/:id`
+DELETE '/api/categories/:id'
 
 ---
 
 ### Cart
 
-GET `/api/cart`
+GET '/api/cart'
 
-POST `/api/cart`
+POST '/api/cart/items'
 
-DELETE `/api/cart/:productId`
+PATCH '/api/cart/items/:productId'
+
+DELETE '/api/cart/items/:productId'
+
+DELETE '/api/cart'
 
 ---
 
 ### Orders
 
-POST `/api/orders`
+POST '/api/orders'
 
-GET `/api/orders`
+GET '/api/orders'
+
+GET '/api/orders/:id'
+
+PATCH '/api/orders/:id/status'
 
 ---
 
