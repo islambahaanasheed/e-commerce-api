@@ -44,24 +44,54 @@ Before running the project, make sure you have installed:
 
 # Installation
 
-## 1. Clone the repository
+## 1. Install Node.js if doesn't exist
+
+Open Command Prompt from Windows bar and check whether Node.js and npm are installed or not:
+
+```bash
+node -v
+npm -v
+```
+
+If you get version numbers, then you can skip to step 2, else Download and install the LTS (Long-Term Support) version from:
+https://nodejs.org/en/download
+
+
+## 2. Clone the repository
 
 ```bash
 git clone https://github.com/islambahaanasheed/islam-bahaa-ecommerce-backend.git
+```
+
+## 3. Navigate to the project folder
+```bash
 cd islam-bahaa-ecommerce-backend
 ```
 
-## 2. Install dependencies
+## 4. Install dependencies
 
 ```bash
 npm install
 ```
 
-## 3. Configure environment variables
+## 5. Connect to mongoDB
+
+1. Create a free account at MongoDB Atlas.
+2. Create a cluster.
+3. Create a database user (make sure to save the password generated).
+4. Copy the connection string.
+    if it's not visible, you can find it as follows:
+    1. Open "Clusters" from the left side bar 
+    2. Click "Connect" next to the cluster name
+    3. Choose "Drivers"
+    4. At the "Add your connection string into your application code" section, the connection string can be found (replace the password after copying)
+
+
+## 6. Configure environment variables
 
 Create a `.env` file in the project root (or copy `.env.example`).
 
-Example:
+Add the following to it:
 
 ```env
 PORT=5000
@@ -69,16 +99,19 @@ NODE_ENV=development
 MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/ecommerce
 ```
 
-## 4. Seed the database
+Replace the connection string (MONGO_URI) with the one obtained from mongoDB
+
+
+## 7. Seed the database
 
 ```bash
-npm run seed
+node seed.js
 ```
 
-## 5. Start the development server
+## 8. Start the application
 
 ```bash
-npm run dev
+node app.js
 ```
 
 The server will start on:
@@ -86,6 +119,15 @@ The server will start on:
 ```
 http://localhost:5000
 ```
+
+## 9. Test API.s
+
+Open postman and import the postman collection and environment located inside the "postman" folder in this project
+
+Select the environment
+
+Start sending requests to the different API.s in the collection
+
 
 ---
 

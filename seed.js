@@ -3,8 +3,8 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const connectDB = require("./db/connectDB");
 
-const Category = require("./models/Category");
-const Product = require("./models/Product");
+const Category = require("./models/category.model");
+const Product = require("./models/product.model");
 const Order = require("./models/order.model");
 
 const seedDatabase = async () => {
