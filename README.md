@@ -47,8 +47,8 @@ Before running the project, make sure you have installed:
 ## 1. Clone the repository
 
 ```bash
-git clone https://github.com/islambahaanasheed/e-commerce-api.git
-cd e-commerce-api
+git clone https://github.com/islambahaanasheed/islam-bahaa-ecommerce-backend.git
+cd islam-bahaa-ecommerce-backend
 ```
 
 ## 2. Install dependencies
